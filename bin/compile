@@ -52,7 +52,7 @@ function download_and_install_ibm_db() {
   export PATH=$BUILD_DIR/m4/bin:$PATH
 
   cd $BUILD_DIR/autoconf-2.69
-  ./configure --with-curl=/usr/lib --prefix=$BUILD_DIR/autoconf 
+  ./configure --prefix=$BUILD_DIR/autoconf --enable-curl
   make
   make install
 
