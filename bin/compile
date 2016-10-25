@@ -133,7 +133,7 @@ else
   done
 fi
 
-
+apt-get install php5-curl
 
 # make php available on bin
 mkdir -p bin
