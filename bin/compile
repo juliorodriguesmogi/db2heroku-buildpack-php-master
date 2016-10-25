@@ -46,13 +46,13 @@ function download_and_install_ibm_db() {
     
   echo "Installing m4 and autoconf ..."
   cd m4-1.4.13
-  ./configure --prefix=$BUILD_DIR/m4 --with-curl 
+  ./configure --prefix=$BUILD_DIR/m4
   make
   make install
   export PATH=$BUILD_DIR/m4/bin:$PATH
 
   cd $BUILD_DIR/autoconf-2.69
-  ./configure --prefix=$BUILD_DIR/autoconf --with-curl 
+  ./configure --prefix=$BUILD_DIR/autoconf --with-curl=/usr/lib
   make
   make install
 
