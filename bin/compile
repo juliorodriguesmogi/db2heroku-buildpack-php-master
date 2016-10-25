@@ -43,7 +43,7 @@ function download_and_install_ibm_db() {
   tar -xzf autoconf-2.69.tar.gz
   tar -xzf m4-1.4.13.tar.gz
  
-  apt-get install php5-curl curl
+  apt-get install libcurl3-openssl-dev 
     
   echo "Installing m4 and autoconf ..."
   cd m4-1.4.13
