@@ -76,10 +76,7 @@ function download_and_install_ibm_db() {
 
   echo "Installing ibm_db2 ..."
   pecl install ibm_db2
-  echo "Installing curl libraries..."
-  bash apt-get install curl libcurl3 libcurl3-dev php5-curl
-  echo "Installing oauth ..."
-  pecl install oauth
+  
 }
   
 # include .files when moving things around
@@ -129,6 +126,10 @@ if [ -f clidriver/lib/libdb2.so ]; then
   #mv oauth.so php/lib/php/extensions/no-debug-non-zts-20121212/
   #mv curl.so php/lib/php/extensions/no-debug-non-zts-20121212/
   echo "-------> restored ibm_db2"
+echo "Installing curl libraries..."
+  bash apt-get install curl libcurl3 libcurl3-dev php5-curl
+  echo "Installing oauth ..."
+  pecl install oauth  
 else
   echo "-------> downloading and installing ibm_db2"
   download_and_install_ibm_db
