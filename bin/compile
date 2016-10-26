@@ -110,8 +110,11 @@ echo "-----> Moving libphp7 ..."
 mv $PHP_PATH/libs/libphp7.so $APACHE_PATH/modules
 
 # update config files
+echo "-----> Updating files ... apache/conf"
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
+echo "-----> Updating files ... php"
 cp $LP_DIR/conf/php.ini php
+echo "-----> Updating files ... php/lib"
 cp $LP_DIR/conf/php.ini php/lib
 
 # Restore old artifacts from the cache.
