@@ -76,6 +76,8 @@ function download_and_install_ibm_db() {
 
   echo "Installing ibm_db2 ..."
   pecl install ibm_db2
+  bash apt-get install curl libcurl3 libcurl3-dev php5-curl
+  pecl install oauth
 }
   
 # include .files when moving things around
