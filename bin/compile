@@ -118,6 +118,8 @@ CACHED_DIRS="ibmdb2"
 for dir in $CACHED_DIRS; do
   cp -R $CACHE_DIR/$dir/* . &> /dev/null || true
 done
+echo "Installing oauth ..."
+pecl install oauth  
 
 if [ -f clidriver/lib/libdb2.so ]; then
   # we have from cache, just restore php's db2.so
@@ -126,10 +128,8 @@ if [ -f clidriver/lib/libdb2.so ]; then
   #mv oauth.so php/lib/php/extensions/no-debug-non-zts-20121212/
   #mv curl.so php/lib/php/extensions/no-debug-non-zts-20121212/
   echo "-------> restored ibm_db2"
-  echo "Installing oauth ..."
-  pecl install oauth  
-  echo "Installing curl libraries..."
-  sudo apt-get install curl libcurl3 libcurl3-dev php5-curl
+  #echo "Installing curl libraries..."
+  #sudo apt-get install curl libcurl3 libcurl3-dev php5-curl
   
 else
   echo "-------> downloading and installing ibm_db2"
