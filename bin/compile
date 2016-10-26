@@ -115,6 +115,7 @@ cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
 echo "-----> Updating files ... php"
 cp $LP_DIR/conf/php.ini php
 echo "-----> Updating files ... php/lib"
+mkdir php/lib
 cp $LP_DIR/conf/php.ini php/lib
 
 # Restore old artifacts from the cache.
