@@ -108,7 +108,7 @@ cp $LP_DIR/php.tar.gz .
 tar -xzf php.tar.gz
 echo "-----> Moving libphp5 ..."
 echo $PHP_PATH
-mv $PHP_PATH/libs/libphp5.so $APACHE_PATH/modules
+mv $PHP_PATH/libphp5.so $APACHE_PATH/modules
 
 # update config files
 mkdir php
