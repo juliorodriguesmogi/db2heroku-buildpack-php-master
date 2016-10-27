@@ -132,7 +132,7 @@ if [ -f clidriver/lib/libdb2.so ]; then
   # mv ibm_db2.so php/lib/php/extensions/no-debug-non-zts-20121212/
    #mv ibm_db2.so $PHP_PATH/modules
    cp ibm_db2.so ext
-   //cp oauth.so ext
+   #cp oauth.so ext
    
   #mv oauth.so php/lib/php/extensions/no-debug-non-zts-20121212/
   #mv curl.so php/lib/php/extensions/no-debug-non-zts-20121212/
