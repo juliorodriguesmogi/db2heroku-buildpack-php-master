@@ -69,7 +69,7 @@ function download_and_install_ibm_db() {
   ln -s $BUILD_DIR/php /app/php
   ln -s $BUILD_DIR/vendor /app/vendor
 
-  export PATH=$BUILD_DIR/autoconf/bin:/app/php/bin:$PATH
+  export PATH=$BUILD_DIR/autoconf/bin:/app/php-5.6.27/bin:$PATH
   export IBM_DB_HOME=$BUILD_DIR/clidriver
   export LD_LIBRARY_PATH=/app/vendor/mcrypt/lib:$LD_LIBRARY_PATH
   export PHP_AUTOCONF=$BUILD_DIR/autoconf/bin/autoconf
