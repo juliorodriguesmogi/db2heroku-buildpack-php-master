@@ -16,7 +16,7 @@ MCRYPT_VERSION="2.5.8"
 APACHE_VERSION="2.2.25"
 APACHE_PATH="apache"
 PHP_VERSION="5.6.27"
-PHP_PATH="php-5.6.27"
+PHP_PATH="php"
 
 BIN_DIR=$(dirname $0)
 
@@ -69,7 +69,7 @@ function download_and_install_ibm_db() {
   ln -s $BUILD_DIR/php /app/php
   ln -s $BUILD_DIR/vendor /app/vendor
 
-  export PATH=$BUILD_DIR/autoconf/bin:/app/php-5.6.27/bin:$PATH
+  export PATH=$BUILD_DIR/autoconf/bin:/app/php/bin:$PATH
   export IBM_DB_HOME=$BUILD_DIR/clidriver
   export LD_LIBRARY_PATH=/app/vendor/mcrypt/lib:$LD_LIBRARY_PATH
   export PHP_AUTOCONF=$BUILD_DIR/autoconf/bin/autoconf
@@ -132,7 +132,7 @@ if [ -f clidriver/lib/libdb2.so ]; then
   # mv ibm_db2.so php/lib/php/extensions/no-debug-non-zts-20121212/
    #mv ibm_db2.so $PHP_PATH/modules
    cp ibm_db2.so php/lib/
-   cp ibm_db2.so /app/php-5.6.27/lib/
+   
   #mv oauth.so php/lib/php/extensions/no-debug-non-zts-20121212/
   #mv curl.so php/lib/php/extensions/no-debug-non-zts-20121212/
   echo "-------> restored ibm_db2"
