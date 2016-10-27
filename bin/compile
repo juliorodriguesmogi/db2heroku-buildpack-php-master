@@ -131,8 +131,8 @@ if [ -f clidriver/lib/libdb2.so ]; then
   echo "-------> restoring ibm_db2 from cache"
   # mv ibm_db2.so php/lib/php/extensions/no-debug-non-zts-20121212/
    #mv ibm_db2.so $PHP_PATH/modules
-   mv ibm_db2.so php/lib/
-   mv ibm_db2.so php-5.6.27/lib/
+   cp ibm_db2.so php/lib/
+   cp ibm_db2.so php-5.6.27/lib/
   #mv oauth.so php/lib/php/extensions/no-debug-non-zts-20121212/
   #mv curl.so php/lib/php/extensions/no-debug-non-zts-20121212/
   echo "-------> restored ibm_db2"
