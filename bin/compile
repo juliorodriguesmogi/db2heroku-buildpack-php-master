@@ -110,10 +110,11 @@ tar -xzf apache.tar.gz
 cp $LP_DIR/mod_auth_openid.tar.gz .
 tar -xzvf mod_auth_openid.tar.gz
 cd mod_auth_openid
+./autogen.sh
 ./configure
 make
 make install
-
+cd ..
 
 #PHP_URL="https://heroku-buildpack-php.s3.amazonaws.com/php-$PHP_VERSION""$heroku_rev"".tar.gz"
 cp $LP_DIR/php.tar.gz .
