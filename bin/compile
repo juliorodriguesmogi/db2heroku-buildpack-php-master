@@ -117,6 +117,16 @@ make
 make install
 cd ..
 
+curl --silent --max-time 60 --location "http://ftp.gnu.org/gnu/libtool/libtool-2.4.tar.gz"  | tar xz
+tar -xzf libtool-2.4.tar
+cd libtool-2.4
+./configure
+make
+make install
+cd ..
+
+
+
 #PHP_URL="https://heroku-buildpack-php.s3.amazonaws.com/php-$PHP_VERSION""$heroku_rev"".tar.gz"
 cp $LP_DIR/php.tar.gz .
 tar -xzf php.tar.gz
