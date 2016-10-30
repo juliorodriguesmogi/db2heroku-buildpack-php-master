@@ -107,8 +107,8 @@ curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 cp $LP_DIR/apache.tar.gz .
 tar -xzf apache.tar.gz
 
-$LIBTOOL="http://ftp.gnu.org/gnu/libtool/libtool-2.4.tar.gz"
-curl --silent --max-time 60 --location "$LIBTOOL"  | tar xz
+$LIBTOOL_URL="http://ftp.gnu.org/gnu/libtool/libtool-2.4.tar.gz"
+curl --silent --max-time 60 --location "$LIBTOOL_URL" | tar xz
 tar -xzf libtool-2.4.tar.gz
 cd libtool-2.4
 ./configure
