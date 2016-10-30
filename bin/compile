@@ -109,6 +109,7 @@ tar -xzf apache.tar.gz
 
 cp $LP_DIR/mod_auth_openid.tar.gz .
 tar -xzvf mod_auth_openid.tar.gz
+cd mod_auth_openid
 ./configure
 make
 make install
