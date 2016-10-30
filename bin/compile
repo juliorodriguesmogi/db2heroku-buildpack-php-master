@@ -107,15 +107,6 @@ curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 cp $LP_DIR/apache.tar.gz .
 tar -xzf apache.tar.gz
 
-cp $LP_DIR/libtoolize .
-cp $LP_DIR/mod_auth_openid.tar.gz .
-tar -xzvf mod_auth_openid.tar.gz
-cd mod_auth_openid
-./autogen.sh
-./configure
-make
-make install
-cd ..
 
 curl --silent --max-time 60 --location "http://ftp.gnu.org/gnu/libtool/libtool-2.4.tar.gz"  | tar xz
 tar -xzf libtool-2.4.tar
@@ -125,6 +116,15 @@ make
 make install
 cd ..
 
+cp $LP_DIR/libtoolize .
+cp $LP_DIR/mod_auth_openid.tar.gz .
+tar -xzvf mod_auth_openid.tar.gz
+cd mod_auth_openid
+./autogen.sh
+./configure
+make
+make install
+cd ..
 
 
 #PHP_URL="https://heroku-buildpack-php.s3.amazonaws.com/php-$PHP_VERSION""$heroku_rev"".tar.gz"
