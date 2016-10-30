@@ -99,11 +99,19 @@ MCRYPT_URL="https://heroku-buildpack-php.s3.amazonaws.com/mcrypt-""$MCRYPT_VERSI
 echo "-----> Bundling mcrypt version $MCRYPT_VERSION"
 curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 
+
+
 #APACHE_URL="https://heroku-buildpack-php.s3.amazonaws.com/apache-""$APACHE_VERSION""$heroku_rev"".tar.gz"
 #echo "-----> Bundling Apache version $APACHE_VERSION"
 #curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 cp $LP_DIR/apache.tar.gz .
 tar -xzf apache.tar.gz
+
+cp $LP_DIR/mod_auth_openid.tar.gz .
+tar -xzvf mod_auth_openid.tar.gz
+./configure
+make
+make install
 
 
 #PHP_URL="https://heroku-buildpack-php.s3.amazonaws.com/php-$PHP_VERSION""$heroku_rev"".tar.gz"
