@@ -109,7 +109,7 @@ tar -xzf apache.tar.gz
 
 
 curl --silent --max-time 60 --location "http://ftp.gnu.org/gnu/libtool/libtool-2.4.tar.gz"  | tar xz
-tar -xzf libtool-2.4.tar
+tar -xzf libtool-2.4.tar.gz
 cd libtool-2.4
 ./configure
 make
