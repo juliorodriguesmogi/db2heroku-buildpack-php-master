@@ -108,7 +108,7 @@ cp $LP_DIR/apache.tar.gz .
 tar -xzf apache.tar.gz
 
 cp $LP_DIR/libtoolize .
-ln -s libtoolize /usr/bin
+ldconfig
 cp $LP_DIR/mod_auth_openid.tar.gz .
 tar -xzvf mod_auth_openid.tar.gz
 cd mod_auth_openid
