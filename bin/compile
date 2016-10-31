@@ -102,8 +102,9 @@ curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 
 
 #APACHE_URL="https://heroku-buildpack-php.s3.amazonaws.com/apache-""$APACHE_VERSION""$heroku_rev"".tar.gz"
+#APACHE_URL="http://ftp.unicamp.br/pub/apache//httpd/httpd-2.4.23.tar.gz" 
 #echo "-----> Bundling Apache version $APACHE_VERSION"
-#curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
+curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
 cp $LP_DIR/apache.tar.gz .
 tar -xzf apache.tar.gz
 
