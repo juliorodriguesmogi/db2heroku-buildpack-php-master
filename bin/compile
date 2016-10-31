@@ -95,7 +95,7 @@ tail -F /app/apache/logs/access_log &
 #export LD_LIBRARY_PATH=/app/php-5.6.27/lib/php:/app/clidriver/lib
 export PHP_INI_SCAN_DIR=/app/www
 echo "Launching apache"
-exec /app/apache-2.4.23-2/bin/httpd -DNO_DETACH -f /app/apache-2.4.23-2/conf/httpd.conf 
+/app/apache-2.4.23-2/bin/./apachectl start -f /app/apache-2.4.23-2/conf/httpd.conf 
 EOF
 
 chmod +x boot.sh
