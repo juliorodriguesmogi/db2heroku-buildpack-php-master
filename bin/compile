@@ -67,9 +67,9 @@ echo $APACHE_PATH
 mkdir php
 mkdir php/lib
 echo "-----> Updating files ... apache/conf"
-cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
+#cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
 echo "-----> Updating files ... php"
-cp $LP_DIR/conf/php.ini php-5.6.27
+#cp $LP_DIR/conf/php.ini php-5.6.27
 #echo "-----> Updating files ... php/lib"
 #cp $LP_DIR/conf/php.ini php/lib
 
