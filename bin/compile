@@ -14,9 +14,9 @@ heroku_rev='-2'
 # config
 MCRYPT_VERSION="2.5.8"
 APACHE_VERSION="2.4.23"
-APACHE_PATH="apache-2.4.23-2"
+APACHE_PATH="/app/apache-2.4.23-2"
 PHP_VERSION="5.6.27"
-PHP_PATH="php-5.6.27"
+PHP_PATH="/app/php-5.6.27"
 
 BIN_DIR=$(dirname $0)
 
@@ -50,6 +50,7 @@ curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 #APACHE_URL="http://ftp.unicamp.br/pub/apache//httpd/httpd-2.4.23.tar.gz" 
 #echo "-----> Bundling Apache version $APACHE_VERSION"
 #curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
+cd /app
 cp $LP_DIR/apache.tar.gz .
 tar -xzf apache.tar.gz
 
@@ -67,7 +68,7 @@ echo $APACHE_PATH
 mkdir php
 mkdir php/lib
 echo "-----> Updating files ... apache/conf"
-#cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
+cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
 echo "-----> Updating files ... php"
 #cp $LP_DIR/conf/php.ini php-5.6.27
 #echo "-----> Updating files ... php/lib"
