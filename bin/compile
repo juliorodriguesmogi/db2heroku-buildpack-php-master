@@ -13,8 +13,8 @@ heroku_rev='-2'
 
 # config
 MCRYPT_VERSION="2.5.8"
-APACHE_VERSION="2.4.23"
-APACHE_PATH="apache-2.4.23-2"
+APACHE_VERSION="2.2.25"
+APACHE_PATH="apache"
 PHP_VERSION="5.6.27"
 PHP_PATH="php-5.6.27"
 
@@ -86,16 +86,16 @@ ln -s /app/php-5.6.27/bin/php bin/php
 
 cat >>boot.sh <<EOF
 for var in \`env|cut -f1 -d=\`; do
-  echo "PassEnv \$var" >> /app/apache-2.4.23-2/conf/httpd.conf;
+  echo "PassEnv \$var" >> /app/apache/conf/httpd.conf;
 done
-touch /app/apache-2.4.23-2/logs/error_log
-touch /app/apache-2.4.23-2/logs/access_log
-tail -F /app/apache-2.4.23-2/logs/error_log &
-tail -F /app/apache-2.4.23-2/logs/access_log &
+touch /app/apache/logs/error_log
+touch /app/apache/logs/access_log
+tail -F /app/apache/logs/error_log &
+tail -F /app/apache/logs/access_log &
 #export LD_LIBRARY_PATH=/app/php-5.6.27/lib/php:/app/clidriver/lib
 export PHP_INI_SCAN_DIR=/app/www
 echo "Launching apache"
-exec /app/apache-2.4.23-2/bin/httpd -DNO_DETACH  -f /app/apache-2.4.23-2/conf/httpd.conf 
+exec /app/apache/bin/httpd -DNO_DETACH  -f /app/apache/conf/httpd.conf 
 EOF
 
 chmod +x boot.sh
