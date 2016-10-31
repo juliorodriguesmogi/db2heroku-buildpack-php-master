@@ -60,6 +60,7 @@ cp $LP_DIR/php.tar.gz .
 tar -xzf php.tar.gz
 echo "-----> Moving libphp5 ..."
 echo $PHP_PATH
+echo $APACHE_PATH
 #mv $PHP_PATH/.libs/libphp5.so $APACHE_PATH/modules
 
 # update config files
@@ -68,9 +69,9 @@ mkdir php/lib
 echo "-----> Updating files ... apache/conf"
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
 echo "-----> Updating files ... php"
-cp $LP_DIR/conf/php.ini php
-echo "-----> Updating files ... php/lib"
-cp $LP_DIR/conf/php.ini php/lib
+cp $LP_DIR/conf/php.ini php-5.6.27
+#echo "-----> Updating files ... php/lib"
+#cp $LP_DIR/conf/php.ini php/lib
 
 # Restore old artifacts from the cache.
 CACHED_DIRS="ibmdb2"
@@ -81,7 +82,7 @@ done
 
 # make php available on bin
 mkdir -p bin
-ln -s /app/php/bin/php bin/php
+ln -s /app/php-5.6.27/bin/php bin/php
 
 cat >>boot.sh <<EOF
 for var in \`env|cut -f1 -d=\`; do
@@ -91,10 +92,10 @@ touch /app/apache/logs/error_log
 touch /app/apache/logs/access_log
 tail -F /app/apache/logs/error_log &
 tail -F /app/apache/logs/access_log &
-export LD_LIBRARY_PATH=/app/php/lib/php:/app/clidriver/lib
+#export LD_LIBRARY_PATH=/app/php-5.6.27/lib/php:/app/clidriver/lib
 export PHP_INI_SCAN_DIR=/app/www
 echo "Launching apache"
-exec /app/apache/bin/httpd -DNO_DETACH
+exec /app/apache-2.4.23-2/bin/httpd -DNO_DETACH
 EOF
 
 chmod +x boot.sh
