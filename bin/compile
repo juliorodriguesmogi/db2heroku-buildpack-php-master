@@ -104,7 +104,7 @@ echo "-----> Bundling Apache version $APACHE_VERSION"
 curl --silent --max-time 60 --location "$APACHE_URL" 
 tar -xzf httpd/httpd-2.4.23.tar.gz
 cd httpd/httpd-2.4.23.tar.gz
-./configure --prefix=/app/apache
+./configure --prefix=/app/apache --with-mod-auth-openid 
 make
 make clean install
 
