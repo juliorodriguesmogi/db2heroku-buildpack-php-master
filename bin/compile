@@ -3,6 +3,7 @@
 
 # fail fast
 set -e
+cd /tmp
 
 # Heroku Revision.
 #
